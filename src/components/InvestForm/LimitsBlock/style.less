@@ -1,0 +1,124 @@
+@import "../../../layouts/less/mixins";
+.invest-form__limits {
+  padding: 20px 0 10px 0px;
+}
+
+.invest-form__limits-toggle {
+  padding-left: 5px;
+  margin: 11px 0;
+  color: #909294;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  &:hover {
+    color: #626161;
+  }
+  &:before {
+    .sprite(@limits-toggle-arrow);
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: -7px;
+  }
+}
+
+.invest-form__limits_hidden {
+  .invest-form__limits-toggle {
+    &:before {
+      transform: rotateZ(0deg);
+    }
+  }
+  .invest-form__limits-block {
+    display: none;
+  }
+}
+
+.invest-form__limits_visible {
+  .invest-form__limits-toggle {
+    &:before {
+      transform: rotateZ(90deg);
+    }
+  }
+  .invest-form__limits-block {
+    display: block;
+  }
+}
+
+.invest-form__limit-type {
+  margin-right: 12px;
+  color: #242526;
+  > * {
+    vertical-align: middle;
+  }
+}
+.invest-form__limits-radio {
+  margin: 5px 0;
+  width: 15px;
+  height: 15px;
+}
+
+
+.invest-form__limit-checkbox {
+  vertical-align: middle;
+  margin: 0 4px 0 0;
+  width: 16px;
+  height: 16px;
+  padding: 3px;
+}
+
+.invest-form__field-val_limit-counter {
+  position: relative;
+}
+
+.invest-form__counter-buttons {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 26px;
+  width: 18px;
+  background: #242526;
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.invest-form__counter-button {
+  height: 50%;
+  background: #f2f3f5;
+  border: 1px solid #c0c2c4;
+  box-sizing: border-box;
+}
+.invest-form__counter-button_top {
+  background: linear-gradient(to top, #d0d1d3, #ffffff );
+  position: relative;
+  &:hover {
+    background: linear-gradient(to bottom, #d0d1d3, #ffffff );
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    border-bottom: 4px solid #242526;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.invest-form__counter-button_bottom {
+  background: linear-gradient(to bottom, #d0d1d3, #ffffff );
+  position: relative;
+  &:hover {
+    background: linear-gradient(to top, #d0d1d3, #ffffff );
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    border-top: 4px solid #242526;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

@@ -1,0 +1,49 @@
+@import "./sprite";
+@import "./fontNames";
+@wrapperWidth: 980px;
+
+.wrapper() {
+  width: @wrapperWidth;
+  margin: 0 auto;
+}
+
+.module-name() {
+  font-size: 34px;
+  text-align: center;
+  color: #626161;
+  margin: 34px 0;
+  line-height: 120%;
+}
+
+.block_blue() {
+  background: linear-gradient(to top, #21d0e2, #1bbbd8);
+  color: #fff;
+}
+
+.input-hidden() {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+}
+
+.button() {
+  min-width: 250px;
+  min-height: 55px;
+  border-radius: 3px;
+  outline: 0;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  font-size: 22px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.input() {
+  box-sizing: border-box;
+  padding: 7px 10px;
+  font-size: 16px;
+}

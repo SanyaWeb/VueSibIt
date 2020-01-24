@@ -1,0 +1,13 @@
+@import "./fontNames";
+
+.font(@fontName; @directory; @ext; @format;  @urlName: @fontName; @weight: normal; @style: normal) {
+  font-family: '@{fontName}';
+  src: url('../../fonts/@{directory}/@{urlName}.@{ext}') format(@format);
+  font-weight: @weight;
+  font-style: @style;
+}
+
+
+@font-face {
+  .font(@RobotoMedium, 'roboto', 'woff', 'woff');
+}

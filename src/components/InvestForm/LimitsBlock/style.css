@@ -1,0 +1,157 @@
+/*
+LESS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: @icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+@icon-home: x y offset_x offset_y width height total_width total_height image_path name;
+
+At the bottom of this section, we provide information about the spritesheet itself
+@spritesheet: width height image @spritesheet-sprites;
+*/
+/*
+The provided classes are intended to be used with the array-like variables
+
+.icon-home {
+  .sprite-width(@icon-home);
+}
+.icon-email {
+  .sprite(@icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+/*
+The `.sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of LESS
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+.sprites(@spritesheet-sprites);
+*/
+.invest-form__limits {
+  padding: 20px 0 10px 0px;
+}
+.invest-form__limits-toggle {
+  padding-left: 5px;
+  margin: 11px 0;
+  color: #909294;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+.invest-form__limits-toggle:hover {
+  color: #626161;
+}
+.invest-form__limits-toggle:before {
+  background-image: url(../../../assets/icons/sprite.png);
+  background-position: -10px 0px;
+  width: 6px;
+  height: 9px;
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: -7px;
+}
+.invest-form__limits_hidden .invest-form__limits-toggle:before {
+  transform: rotateZ(0deg);
+}
+.invest-form__limits_hidden .invest-form__limits-block {
+  display: none;
+}
+.invest-form__limits_visible .invest-form__limits-toggle:before {
+  transform: rotateZ(90deg);
+}
+.invest-form__limits_visible .invest-form__limits-block {
+  display: block;
+}
+.invest-form__limit-type {
+  margin-right: 12px;
+  color: #242526;
+}
+.invest-form__limit-type > * {
+  vertical-align: middle;
+}
+.invest-form__limits-radio {
+  margin: 5px 0;
+  width: 15px;
+  height: 15px;
+}
+.invest-form__limit-checkbox {
+  vertical-align: middle;
+  margin: 0 4px 0 0;
+  width: 16px;
+  height: 16px;
+  padding: 3px;
+}
+.invest-form__field-val_limit-counter {
+  position: relative;
+}
+.invest-form__counter-buttons {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 26px;
+  width: 18px;
+  background: #242526;
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.invest-form__counter-button {
+  height: 50%;
+  background: #f2f3f5;
+  border: 1px solid #c0c2c4;
+  box-sizing: border-box;
+}
+.invest-form__counter-button_top {
+  background: linear-gradient(to top, #d0d1d3, #ffffff);
+  position: relative;
+}
+.invest-form__counter-button_top:hover {
+  background: linear-gradient(to bottom, #d0d1d3, #ffffff);
+}
+.invest-form__counter-button_top:after {
+  content: "";
+  position: absolute;
+  border-bottom: 4px solid #242526;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.invest-form__counter-button_bottom {
+  background: linear-gradient(to bottom, #d0d1d3, #ffffff);
+  position: relative;
+}
+.invest-form__counter-button_bottom:hover {
+  background: linear-gradient(to top, #d0d1d3, #ffffff);
+}
+.invest-form__counter-button_bottom:after {
+  content: "";
+  position: absolute;
+  border-top: 4px solid #242526;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/*# sourceMappingURL=style.css.map */

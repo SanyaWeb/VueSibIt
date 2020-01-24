@@ -1,0 +1,115 @@
+/*
+LESS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: @icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+@icon-home: x y offset_x offset_y width height total_width total_height image_path name;
+
+At the bottom of this section, we provide information about the spritesheet itself
+@spritesheet: width height image @spritesheet-sprites;
+*/
+/*
+The provided classes are intended to be used with the array-like variables
+
+.icon-home {
+  .sprite-width(@icon-home);
+}
+.icon-email {
+  .sprite(@icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+/*
+The `.sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of LESS
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+.sprites(@spritesheet-sprites);
+*/
+.invest-form__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.invest-form__btn {
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: #3a3b3c;
+  color: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  align-items: stretch;
+  border-radius: 5px;
+  overflow: hidden;
+  user-select: none;
+  text-shadow: 0 -1px #777;
+  font-weight: bold;
+}
+.invest-form__btn_reduction {
+  background: #f26666;
+}
+.invest-form__btn_reduction:hover {
+  background: linear-gradient(to top, #ff7974, #cc6060);
+}
+.invest-form__btn_growth {
+  background: #53a642;
+}
+.invest-form__btn_growth:hover {
+  background: linear-gradient(to top, #5cb144, #488f3c);
+}
+.invest-form__btn-icon {
+  width: 30px;
+  background: #000;
+  position: relative;
+}
+.invest-form__btn-icon:before {
+  position: absolute;
+  content: "";
+  background-image: url(../../../assets/icons/sprite.png);
+  background-position: 0px 0px;
+  width: 10px;
+  height: 11px;
+  top: 50%;
+  left: 50%;
+}
+.invest-form__btn-icon_reduction {
+  background: #e95f5f;
+}
+.invest-form__btn-icon_reduction:before {
+  transform: translate(-50%, -50%) rotateZ(0deg);
+}
+.invest-form__btn-icon_growth {
+  background: #499c38;
+}
+.invest-form__btn-icon_growth:before {
+  transform: translate(-50%, -50%) rotateZ(180deg);
+}
+.invest-form__btn-text {
+  text-align: center;
+  padding: 15px 0;
+  flex-grow: 1;
+}
+/*# sourceMappingURL=style.css.map */

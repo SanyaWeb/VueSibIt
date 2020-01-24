@@ -1,0 +1,227 @@
+@import "../../layouts/less/mixins";
+
+.icon() {
+  position: absolute;
+  top: 6px;
+  left: 9px;
+  color: #909294;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.invest-now {
+  width: 316px;
+  height: 368px;
+  box-sizing: border-box;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.invest-now__header {
+  padding: 14.5px 25px;
+  color: #3a3b3c;
+  line-height: 1;
+  border-bottom: 1px solid #e0e2e4;
+}
+.invest-now__title {
+  margin: 0;
+  font-size: 16px;
+  font-family: @RobotoMedium;
+  line-height: 1;
+}
+
+
+.invest-form {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 16px 23px 20px 23px;
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.invest-form__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 4px 0;
+  position: relative;
+}
+
+.invest-form__left-col {
+  width: 127px;
+  padding-left: 5px;
+}
+.invest-form__right-col {
+  width: 130px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.invest-form__right-col_left {
+  justify-content: flex-start;
+}
+.invest-form__right-col_baseline {
+  align-items: baseline;
+}
+
+.invest-form__field-input {
+  width: 100%;
+  box-sizing: border-box;
+  text-align: right;
+  padding: 4.5px 6px 4.5px 20px;
+  font-size: 13px;
+  border: 1px solid #c0c2c4;
+  border-radius: 3px;
+  outline: 0;
+  &:focus {
+    border: 1px solid #555759;
+  }
+  &.not-valid {
+    border: 1px solid #e64545;
+  }
+}
+
+.invest-form__field-input_limit-counter {
+  padding-right: 23px;
+}
+
+.error-message {
+  display: none;
+  padding: 8px;
+  font-size: 10px;
+  background: #e64545;
+  color: #ffffff;
+  position: absolute;
+  bottom: calc( 100% + 5px );
+  line-height: 1.4;
+  border-radius: 4px;
+  width: 130px;
+  &:after {
+    position: absolute;
+    content: "";
+    left: 10px;
+    top: 100%;
+    width: 0;
+    height: 0;
+    border-top: 4px solid #e64545;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+  }
+  &.visible {
+    display: block;
+  }
+}
+.error-message__value {
+  border-bottom: 2px dotted #ffffff;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.invest-form__field-val {
+  position: relative;
+}
+
+.invest-form__field-val_invest {
+  position: relative;
+  &:before {
+    .icon();
+    content: "$";
+  }
+}
+.invest-form__field-val_percent {
+  position: relative;
+  &:before {
+    .icon();
+    content: "%";
+  }
+}
+
+.invest-form__field-val_multiplier {
+  width: 50px;
+  position: relative;
+  &:before {
+    .icon();
+    content: "×";
+    font-weight: bold;
+    font-size: 15px;
+  }
+}
+.invest-form__field-val_disabled {
+  opacity: 0.5;
+}
+
+.invest-form__real-invest {
+  color: #909294;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5px;
+  align-items: center;
+  overflow-y: visible;
+  max-width: 80px;
+}
+.invest-form__real-invest-val {
+  padding: 5px 5px 5px 20px;
+  position: relative;
+  white-space: nowrap;
+  background: #fff;
+  left: 5px;
+  &:before {
+    .icon();
+    content: "$";
+  }
+}
+
+/******************************************************************/
+/******************************************************************/
+
+/*********************************************************************/
+
+.invest-form-mult-slider-wrap {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 25px 25px 35px 25px;
+  background: #3a3b3c;
+  color: #fff;
+  z-index: 9;
+  display: none;
+}
+
+#invest-form-mult-slider {
+  height: 4px;
+  border-radius: 2px;
+  background: #909294;
+  border: 0;
+  outline: 0;
+  .ui-slider-handle {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fff;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 5px solid #7e98e5;
+    outline: 0;
+  }
+  .ui-slider-range {
+    background: #7e98e5;
+  }
+  .slider-scale {
+    position: absolute;
+    top: calc( 100% + 11px );
+    width: 100%;
+    color: #909294;
+  }
+  .slider-scale__item {
+    position: absolute;
+    transform: translateX(-50%);
+  }
+}
+

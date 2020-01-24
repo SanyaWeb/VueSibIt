@@ -1,0 +1,267 @@
+/*
+LESS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: @icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+@icon-home: x y offset_x offset_y width height total_width total_height image_path name;
+
+At the bottom of this section, we provide information about the spritesheet itself
+@spritesheet: width height image @spritesheet-sprites;
+*/
+/*
+The provided classes are intended to be used with the array-like variables
+
+.icon-home {
+  .sprite-width(@icon-home);
+}
+.icon-email {
+  .sprite(@icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+/*
+The `.sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of LESS
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+.sprites(@spritesheet-sprites);
+*/
+.invest-now {
+  width: 316px;
+  height: 368px;
+  box-sizing: border-box;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+.invest-now__header {
+  padding: 14.5px 25px;
+  color: #3a3b3c;
+  line-height: 1;
+  border-bottom: 1px solid #e0e2e4;
+}
+.invest-now__title {
+  margin: 0;
+  font-size: 16px;
+  font-family: "Roboto-Medium";
+  line-height: 1;
+}
+.invest-form {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 16px 23px 20px 23px;
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 13px;
+}
+.invest-form__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 4px 0;
+  position: relative;
+}
+.invest-form__left-col {
+  width: 127px;
+  padding-left: 5px;
+}
+.invest-form__right-col {
+  width: 130px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.invest-form__right-col_left {
+  justify-content: flex-start;
+}
+.invest-form__right-col_baseline {
+  align-items: baseline;
+}
+.invest-form__field-input {
+  width: 100%;
+  box-sizing: border-box;
+  text-align: right;
+  padding: 4.5px 6px 4.5px 20px;
+  font-size: 13px;
+  border: 1px solid #c0c2c4;
+  border-radius: 3px;
+  outline: 0;
+}
+.invest-form__field-input:focus {
+  border: 1px solid #555759;
+}
+.invest-form__field-input.not-valid {
+  border: 1px solid #e64545;
+}
+.invest-form__field-input_limit-counter {
+  padding-right: 23px;
+}
+.error-message {
+  display: none;
+  padding: 8px;
+  font-size: 10px;
+  background: #e64545;
+  color: #ffffff;
+  position: absolute;
+  bottom: calc(100% + 5px);
+  line-height: 1.4;
+  border-radius: 4px;
+  width: 130px;
+}
+.error-message:after {
+  position: absolute;
+  content: "";
+  left: 10px;
+  top: 100%;
+  width: 0;
+  height: 0;
+  border-top: 4px solid #e64545;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+}
+.error-message.visible {
+  display: block;
+}
+.error-message__value {
+  border-bottom: 2px dotted #ffffff;
+  display: inline-block;
+  white-space: nowrap;
+}
+.invest-form__field-val {
+  position: relative;
+}
+.invest-form__field-val_invest {
+  position: relative;
+}
+.invest-form__field-val_invest:before {
+  position: absolute;
+  top: 6px;
+  left: 9px;
+  color: #909294;
+  font-size: 13px;
+  line-height: 1;
+  content: "$";
+}
+.invest-form__field-val_percent {
+  position: relative;
+}
+.invest-form__field-val_percent:before {
+  position: absolute;
+  top: 6px;
+  left: 9px;
+  color: #909294;
+  font-size: 13px;
+  line-height: 1;
+  content: "%";
+}
+.invest-form__field-val_multiplier {
+  width: 50px;
+  position: relative;
+}
+.invest-form__field-val_multiplier:before {
+  position: absolute;
+  top: 6px;
+  left: 9px;
+  color: #909294;
+  font-size: 13px;
+  line-height: 1;
+  content: "×";
+  font-weight: bold;
+  font-size: 15px;
+}
+.invest-form__field-val_disabled {
+  opacity: 0.5;
+}
+.invest-form__real-invest {
+  color: #909294;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5px;
+  align-items: center;
+  overflow-y: visible;
+  max-width: 80px;
+}
+.invest-form__real-invest-val {
+  padding: 5px 5px 5px 20px;
+  position: relative;
+  white-space: nowrap;
+  background: #fff;
+  left: 5px;
+}
+.invest-form__real-invest-val:before {
+  position: absolute;
+  top: 6px;
+  left: 9px;
+  color: #909294;
+  font-size: 13px;
+  line-height: 1;
+  content: "$";
+}
+/******************************************************************/
+/******************************************************************/
+/*********************************************************************/
+.invest-form-mult-slider-wrap {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 25px 25px 35px 25px;
+  background: #3a3b3c;
+  color: #fff;
+  z-index: 9;
+  display: none;
+}
+#invest-form-mult-slider {
+  height: 4px;
+  border-radius: 2px;
+  background: #909294;
+  border: 0;
+  outline: 0;
+}
+#invest-form-mult-slider .ui-slider-handle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 5px solid #7e98e5;
+  outline: 0;
+}
+#invest-form-mult-slider .ui-slider-range {
+  background: #7e98e5;
+}
+#invest-form-mult-slider .slider-scale {
+  position: absolute;
+  top: calc(100% + 11px);
+  width: 100%;
+  color: #909294;
+}
+#invest-form-mult-slider .slider-scale__item {
+  position: absolute;
+  transform: translateX(-50%);
+}
+/*# sourceMappingURL=style.css.map */
